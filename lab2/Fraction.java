@@ -7,7 +7,7 @@ import java.io.*;
 class Fraction {
 
   /* private fields within a Fraction. */
-  private int numberOfFractions = 0;
+  private static int numberOfFractions = 0;
 
   private int numerator;
   private int denominator;
@@ -86,7 +86,7 @@ class Fraction {
       System.out.println("Fatal error:  Negative numerator.");
       System.exit(0);
     }
-    numerator = numerator;
+    this.numerator = numerator;
   }
 
   /** Returns the number of Fraction objects in existence.
@@ -104,7 +104,14 @@ class Fraction {
    */
   static private int gcd(int x, int y) {
     /* Replace the following line with your solution. */
-    return 1;
+    int biggerOne = Math.max(x,y);
+	int smallerOne = Math.min(x,y);
+	if (smallerOne == 0) {
+		return biggerOne;
+	}
+	else {
+		return gcd(smallerOne, biggerOne % smallerOne);
+	}
   }
 
   /** Put the Fraction class through some tests.
