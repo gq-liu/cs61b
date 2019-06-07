@@ -225,7 +225,8 @@ class Date {
 
   public static void main(String[] argv) {
     System.out.println("\nTesting constructors.");
-    Date d1 = new Date(1, 1, 1);
+    //Date d1 = new Date("adf afd d");
+	Date d1 = new Date(1, 1, 1);
     System.out.println("Date should be 1/1/1: " + d1);
     d1 = new Date("2/4/2");
     System.out.println("Date should be 2/4/2: " + d1);
